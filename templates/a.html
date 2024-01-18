@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block start %}
+        <h1>dssdsdsdsdsdsd</h1>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+
+        <center><table class="container" border="1">
+         
+            <tr>
+                <th><center><h1>S.No</h1></center></th>
+                <th><center><h1>Name</h1></center></th>
+                <th><center><h1>Age</h1></th>
+                <th><center><h1>Can Vote</h1></th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td><center><h1>{{forloop.counter}}</h1></center></td>
+                <td><center><h1>{{i.name}}</h1></center></td>
+                <td><center><h1>{{i.Age}}</h1></center></td>
+                <td {% if i.Age < 18 %} style="background:red" {% endif %} >
+                  {% if i.Age >= 18 %}
+                   <h1>Yes </h1>
+                  {% else %}
+                  <h1>No </h1>
+                  {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table></center>
+        {{text|truncatechars:90}}
+        <br>
+        <br>
+        <h1>{% if 'man' in fruits %}
+            "yes available"
+            {% else %}
+            " not available "
+            {% endif %}
+            
+        </h1>
+{% endblock %}
+
+

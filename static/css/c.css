@@ -1,0 +1,9 @@
+body{
+    background-color:rgb(255, 255, 255);
+}
+table,th,td{
+    border:2px solid black;
+    width: 800px;
+    align-items: center;
+    height: 90px;
+}

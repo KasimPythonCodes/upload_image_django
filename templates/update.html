@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/css/receipes.css">
+        <style>
+            th,h3{
+                font-family: auto;
+            }
+        </style>
+        
+    </head>
+    <body bgcolor="white">
+
+        <div class="container mt-5 ">
+           
+            <form  style="height:600px" class="col-6 mx-sm-auto p-3 shadow-lg card " method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+               {% comment %} jab koi form upload karna padta hai frontend se backend me tab enctype="multipart/form-data" ye lagana
+                padta hai nahi to file jayegi hi nahi {% endcomment %}
+                <h1>Update Receipe</h1>
+                <b><hr></b><br>
+                <div class="mb-3 ">
+                    <label class="form-label">Receipe Name</label><br>
+                    <input name="receipe_name" value={{a.receipe_name}} type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Receipe Description</label><br>
+                    <textarea name="receipe_description" class="form-control" required>{{a.receipe_description}} </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Receipe Image</label><br>
+                    <input name="receipe_image" type="file" class="form-control">
+                </div><br><br>
+                <button  style="margin-left:7px;" type="submit" class="btn btn-success">Update Receipe</button>
+            </form>
+            <br><br>
+        </div>
+       
+        <script src="" async defer></script>
+    </body>
+</html>
